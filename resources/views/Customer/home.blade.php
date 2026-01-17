@@ -10,6 +10,7 @@
 <body class="w-full max-w-6xl mx-auto mt-2">
    
     <div class="flex flex-col gap-4">
+        @if ($users->count()>0)
  <h1>All our Customers</h1>
  <table class="text-center border border-collapse">
     <tr>
@@ -19,7 +20,19 @@
         <th class="border py-2 px-4">Email</th>
         <th class="border py-2 px-4">Gender</th>
     </tr>
+    @foreach ($users as $user )
+        <tr>
+            <td class="border py-1 px-4">{{$user->id}}</td>
+            <td class="border py-1 px-4">{{$user->name}}</td>
+            <td class="border py-1 px-4">{{$user->lastName}}</td>
+            <td class="border py-1 px-4">{{$user->email}}</td>
+            <td class="border py-1 px-4">{{$user->gender}}</td>
+        </tr>
+    @endforeach
  </table>
+ @else
+ <h1 class="text-center">No customer currently exists</h1>
+ @endif
     </div>
 </body>
 </html>
