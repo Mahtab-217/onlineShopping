@@ -31,7 +31,7 @@
     @endforeach
  </table>
  @else
- <h1 class="text-center">No customer currently exists</h1>
+ <h1 class="text-center bg-green-900 w-4/12 border rounded text-white py-2 ">No customer currently exists</h1>
  @endif
     </div>
 </body>
