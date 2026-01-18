@@ -19,5 +19,6 @@ Route::middleware('auth')->group(function () {
 });
 Route::prefix("/customer")->controller(CustomerController::class)->group(function(){
     Route::get("/","index");
+    Route::view('/create','Customer.insert');
 });
 require __DIR__.'/auth.php';

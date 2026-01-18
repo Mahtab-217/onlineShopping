@@ -11,7 +11,8 @@
    
     <div class="flex h-screen w-full justify-center items-center ">
      <div class="w-9/12 border rounded-lg gap-4">
-        <form class=" flex flex-col w-full gap3" action="">
+        <h1 class="w-full bg-green-900 text-white text-3xl mb-3 font-bold text-center rounded-md">Add Customer</h1>
+        <form class=" flex flex-col w-full gap-3" action="">
          <input class="border py-2 w-full rounded-md focus:outline-none" type="text" name="name" placehoder="Name">
          <input class="border py-2 w-full rounded-md focus:outline-none" type="text" name="lastName" placehoder="Last Name">
          <input class="border py-2 w-full rounded-md focus:outline-none" type="email" name="email" placehoder="Email">
