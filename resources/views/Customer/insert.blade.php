@@ -13,16 +13,16 @@
      <div class="w-9/12 border rounded-lg gap-4">
         <h1 class="w-full bg-green-900 text-white text-3xl mb-3 font-bold text-center rounded-md">Add Customer</h1>
         <form class=" flex flex-col w-full gap-3" action="">
-         <input class="border py-2 w-full rounded-md focus:outline-none" type="text" name="name" placehoder="Name">
-         <input class="border py-2 w-full rounded-md focus:outline-none" type="text" name="lastName" placehoder="Last Name">
-         <input class="border py-2 w-full rounded-md focus:outline-none" type="email" name="email" placehoder="Email">
+         <input class="border py-2 w-full rounded-md focus:outline-none" type="text" name="name" placeholder="Name">
+         <input class="border py-2 w-full rounded-md focus:outline-none" type="text" name="lastName" placeholder="Last Name">
+         <input class="border py-2 w-full rounded-md focus:outline-none" type="email" name="email" placeholder="Email">
         <select class="border py-2 w-full rounded-md focus:outline-none"  name="gender">
             <option value="male">Male</option>
             <option value="female">female</option>
          </select>
          <lable>profile picture</lable>
          <input  class="border py-2 w-full rounded-md focus:outline-none" type="file" name="image" accept="image/*" >
-         <button type="submit" class="py-2 bg-green-900 text-white">Save</button>
+         <button type="submit" class="py-2 bg-green-900 text-white rounded-md">Save</button>
         </form>
      </div>
     </div>
