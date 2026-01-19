@@ -10,9 +10,9 @@
 <body class="w-full max-w-6xl mx-auto mt-2">
    
     <div class="flex h-screen w-full justify-center items-center ">
-
-        @foreach ($errors as$error )
-        @if ($errors->count()>0)
+         @if ($errors->count()>0)
+        @foreach ($errors as $error )
+       
         
             <div class="py-4 px-2 bg-red-600 text-white">
                 <h1>{{$error}}</h1>
@@ -20,7 +20,7 @@
         @endforeach
         @endif
      <div class="w-9/12 border rounded-lg gap-4">
-        <h1 class="w-full bg-green-900 text-white text-3xl mb-3 font-bold text-center rounded-md">Add Customer</h1>
+        <h1 class="w-full text-3xl mb-3 font-bold text-center rounded-md">Add Customer</h1>
         <form class=" flex flex-col w-full gap-3" action="">
          <input class="border py-2 w-full rounded-md focus:outline-none" type="text" name="name" placeholder="Name">
          <input class="border py-2 w-full rounded-md focus:outline-none" type="text" name="lastName" placeholder="Last Name">
