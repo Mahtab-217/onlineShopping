@@ -11,23 +11,26 @@
    
     <div class="flex flex-col gap-4">
         @if ($users->count()>0)
- <h1>All our Customers</h1>
- <table class="text-center border border-collapse">
+ <h1 class="text-center text-bold text-2xl bg-green-800 py-2 text-gray-200 rounded-sm mb-0">All our Customers</h1>
+ <table class="text-center border border-collapse rounded-md">
     <tr>
-        <th class="border py-2 px-4">Id</th>
-        <th class="border py-2 px-4">Name</th>
-        <th class="border py-2 px-4">Last Name</th>
-        <th class="border py-2 px-4">Email</th>
-        <th class="border py-2 px-4">Gender</th>
-        
+        <th class="border rounded-md py-2 px-4">Id</th>
+        <th class="border rounded-md py-2 px-4">Name</th>
+        <th class="border rounded-md py-2 px-4">Last Name</th>
+        <th class="border rounded-md py-2 px-4">Email</th>
+        <th class="border rounded-md py-2 px-4">Gender</th>
+        <th>Profile Picture</th>
     </tr>
-    @foreach ($users as $user )
+    @foreach ($users as $customer )
         <tr>
-            <td class="border py-1 px-4">{{$user->id}}</td>
-            <td class="border py-1 px-4">{{$user->name}}</td>
-            <td class="border py-1 px-4">{{$user->lastName}}</td>
-            <td class="border py-1 px-4">{{$user->email}}</td>
-            <td class="border py-1 px-4">{{$user->gender}}</td>
+            <td class="border py-1 rounded-md px-4">{{$customer->id}}</td>
+            <td class="border py-1 rounded-md px-4">{{$customer->name}}</td>
+            <td class="border py-1 rounded-md px-4">{{$customer->lastName}}</td>
+            <td class="border py-1 rounded-md px-4">{{$customer->email}}</td>
+            <td class="border py-1 rounded-md px-4">{{$customer->gender}}</td>
+            <td>
+                <img class="h-12 w-18 rounded-full" src="storage/{{ $customer->img_url }}" alt="">
+            </td>
         </tr>
     @endforeach
  </table>
