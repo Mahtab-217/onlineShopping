@@ -19,6 +19,7 @@
         <th class="border py-2 px-4">Last Name</th>
         <th class="border py-2 px-4">Email</th>
         <th class="border py-2 px-4">Gender</th>
+        
     </tr>
     @foreach ($users as $user )
         <tr>

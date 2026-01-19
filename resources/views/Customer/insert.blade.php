@@ -21,7 +21,9 @@
         @endif
      <div class="w-9/12 border rounded-lg gap-4">
         <h1 class="w-full text-3xl mb-3 font-bold text-center rounded-md">Add Customer</h1>
-        <form class=" flex flex-col w-full gap-3" action="">
+        <form class=" flex flex-col w-full gap-3" action="{{ URL("customer/upload") }}" enctype="multipart/form-data" method="POST">
+            @csrf
+
          <input class="border py-2 w-full rounded-md focus:outline-none" type="text" name="name" placeholder="Name">
          <input class="border py-2 w-full rounded-md focus:outline-none" type="text" name="lastName" placeholder="Last Name">
          <input class="border py-2 w-full rounded-md focus:outline-none" type="email" name="email" placeholder="Email">
