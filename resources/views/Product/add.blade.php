@@ -18,7 +18,7 @@
                 <input type="number" name="quantity" placeholder="Producr quantity" class="border w-full focus:outline-none focus:border-none focus:ring ring-indigo-600 rounded-sm p-2 ">
                 <input type="text" name="madein" placeholder="Products of?" class="border w-full focus:outline-none focus:border-none focus:ring ring-indigo-600 rounded-sm p-2 ">
                 <input type="file" accept="image/*" name="photo" class="border w-full focus:outline-none focus:border-none focus:ring ring-indigo-600 rounded-sm p-2 ">
-                <textarea name="description" class="h-24 border focus:outline-none focus:border-none focus:ring ring-indigo-600 rounded-sm p-2 w-full" placeholder="Enter producr's decription"></textarea>
+                <textarea name="description" class="h-24 border focus:outline-none focus:border-none focus:ring ring-indigo-600 rounded-sm p-2 w-full" placeholder="Enter product's decription"></textarea>
                  <button type="submit" class="px-4 py-2 bg-black/90 text-white rounded-sm">Save</button>
             </form>
         </div>

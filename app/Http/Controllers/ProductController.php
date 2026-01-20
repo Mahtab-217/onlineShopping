@@ -20,7 +20,7 @@ class ProductController extends Controller
         ]);
         $path=null;
         if($request->hasFile("photo")){
-            $path=$request->file("photo")->store("product_img","public");
+            $path=$request->file("photo")->store("product_images","public");
         }
         $product=new Product();
         $product->name=$request->name;
@@ -31,7 +31,7 @@ class ProductController extends Controller
         $proDetails->quantity=$request->quantity;
         $proDetails->made_in=$request->madein;
         $proDetails->product_id=$product->id;
-        $proDetails->img_url= $path;
+        $proDetails->img_url = $path;
         $proDetails->save();
     }
 }
