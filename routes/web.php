@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +22,9 @@ Route::prefix("/customer")->controller(CustomerController::class)->group(functio
     Route::get("/","index");
     Route::view('/create','Customer.insert');
     Route::post('upload',"create");
+});
+Route::prefix("/products")->controller(ProductController::class)->group(function(){
+    Route::get("/add","showForm");
+    Route::post('create',"create");
 });
 require __DIR__.'/auth.php';
