@@ -33,7 +33,7 @@
          </select>
          <lable>profile picture</lable>
          <input  class="border py-2 w-full rounded-md focus:outline-none" type="file" name="image" accept="image/*" >
-         <button type="submit" class="py-2 bg-green-900 text-white rounded-md">Save</button>
+         <button type="submit" class="py-2 bg-black/90 text-white rounded-md">Save</button>
         </form>
      </div>
     </div>

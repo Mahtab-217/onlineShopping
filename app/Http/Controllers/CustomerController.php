@@ -33,7 +33,6 @@ class CustomerController extends Controller
     $customer->img_url=$imagePath;
      event(new createUserEvent($customer));
      $customer->save();
-    
-     redirect('/customer');
+       return redirect('customer');
     }
 }

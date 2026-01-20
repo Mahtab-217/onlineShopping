@@ -9,17 +9,17 @@
 </head>
 <body class="w-full max-w-6xl mx-auto mt-2">
    
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 ">
         @if ($users->count()>0)
- <h1 class="text-center text-bold text-2xl bg-green-800 py-2 text-gray-200 rounded-sm mb-0">All our Customers</h1>
- <table class="text-center border border-collapse rounded-md">
+ <h1 class="text-center text-bold text-2xl bg-black/90 py-2 text-gray-200 rounded-sm mb-0">All our Customers</h1>
+ <table class="text-center border  border-collapse rounded-md">
     <tr>
         <th class="border rounded-md py-2 px-4">Id</th>
         <th class="border rounded-md py-2 px-4">Name</th>
         <th class="border rounded-md py-2 px-4">Last Name</th>
         <th class="border rounded-md py-2 px-4">Email</th>
         <th class="border rounded-md py-2 px-4">Gender</th>
-        <th>Profile Picture</th>
+        <th> Picture</th>
     </tr>
     @foreach ($users as $customer )
         <tr>
@@ -29,7 +29,7 @@
             <td class="border py-1 rounded-md px-4">{{$customer->email}}</td>
             <td class="border py-1 rounded-md px-4">{{$customer->gender}}</td>
             <td>
-                <img class="h-12 w-18 rounded-full" src="storage/{{ $customer->img_url }}" alt="">
+                <img class="h-15 w-15 justify-center items-center flex rounded-full" src="storage/{{ $customer->img_url }}" alt="">
             </td>
         </tr>
     @endforeach
