@@ -50,7 +50,7 @@
             @endif
         </header>
             <div class=" w-full h-fit max-w-6xl">
-           
+             <X-hero/>
             </div>
 
         @if (Route::has('login'))
