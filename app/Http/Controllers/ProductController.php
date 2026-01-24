@@ -17,6 +17,7 @@ class ProductController extends Controller
          "name"=>"required|min:4|max:50",
          "price"=>"required|min:1|max:10",
          "quantity"=>"required|min:1|max:20",
+         "image"=>"nullable|min:5|max:100,mimes:jpg,jpeg,avif,png"
         ]);
         $path=null;
         if($request->hasFile("photo")){
@@ -25,7 +26,7 @@ class ProductController extends Controller
         $product=new Product();
         $product->name=$request->name;
         $product->save();
-        $proDetails=new productDetails();
+        $proDetails= new productDetails();
         $proDetails->price=$request->price;
         $proDetails->description=$request->description;
         $proDetails->quantity=$request->quantity;
