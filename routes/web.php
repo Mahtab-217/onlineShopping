@@ -27,4 +27,5 @@ Route::prefix("/products")->controller(ProductController::class)->group(function
     Route::get("/add","showForm");
     Route::post('create',"create");
 });
+Route::get('/',[ProductController::class, 'landing']);
 require __DIR__.'/auth.php';

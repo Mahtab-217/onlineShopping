@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     //
     public function landing(){
-        $products =Product::with('productDetail')->get();
+        $products =Product::with('product_details')->get();
       return view('welcome', ['products'=>$products]); 
 
     }
@@ -27,17 +27,17 @@ class ProductController extends Controller
         ]);
         $path=null;
         if($request->hasFile("photo")){
-            $path=$request->file("photo")->store("images","public");
+            $path=$request->file("photo")->store("product_image","public");
         }
-        $products=new Product();
-        $products->name=$request->name;
-        $products->save();
+        $product=new Product();
+        $product->name=$request->name;
+        $product->save();
         $proDetails= new productDetails();
         $proDetails->price=$request->price;
         $proDetails->description=$request->description;
         $proDetails->quantity=$request->quantity;
         $proDetails->made_in=$request->madein;
-        $proDetails->product_id=$products->id;
+        $proDetails->product_id=$product->id;
         $proDetails->img_url = $path;
         $proDetails->save();
         return redirect("/");
