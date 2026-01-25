@@ -29,15 +29,15 @@ class ProductController extends Controller
         if($request->hasFile("photo")){
             $path=$request->file("photo")->store("images","public");
         }
-        $product=new Product();
-        $product->name=$request->name;
-        $product->save();
+        $products=new Product();
+        $products->name=$request->name;
+        $products->save();
         $proDetails= new productDetails();
         $proDetails->price=$request->price;
         $proDetails->description=$request->description;
         $proDetails->quantity=$request->quantity;
         $proDetails->made_in=$request->madein;
-        $proDetails->product_id=$product->id;
+        $proDetails->product_id=$products->id;
         $proDetails->img_url = $path;
         $proDetails->save();
         return redirect("/");

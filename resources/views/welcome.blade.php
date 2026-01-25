@@ -54,9 +54,19 @@
         <div class="flex flex-col items-center ">
       <h1 class="text-3xl font-bold">Features Products</h1>
       <div class="grid w-full grid-cols-3 gap-8 ">
-        @if ($product->count()>0)
+        @if ($products->count()>0)
+        
         @foreach ($products as $product)
-            <img src="{{'/storage'.$product->productDetail->img_url }}" alt="">
+        <div class="border rounded-md flex flex-col gap-2">
+            <img class="rpunded-t-lg w-full h-48" src="{{'/storage/'.$product->productDetail->img_url }}" alt="">
+           <div class="px-1">
+            <h1 class="text-3xl font-bold">{{$products->name}}</h1>
+            <div class=" flex justify-between">
+              <p>{{$products->product_detail->price}} AFN</p>
+              <p>{{$products->product_detail->made_in}} </p>
+            </div>
+           </div>
+        </div>
         @endforeach
         @else
             <h1>No product exists yet</h1>
