@@ -51,7 +51,20 @@
         </header>
             <div class=" w-full h-fit max-w-6xl">
              <x-hero/>
+        <div class="flex flex-col items-center ">
+      <h1 class="text-3xl font-bold">Features Products</h1>
+      <div class="grid w-full grid-cols-3 gap-8 ">
+        @if ($product->count()>0)
+        @foreach ($products as $product)
+            <img src="{{'/storage'.$product->productDetail->img_url }}" alt="">
+        @endforeach
+        @else
+            <h1>No product exists yet</h1>
+        @endif
+      </div>
+        </div>
             </div>
+         
 
         @if (Route::has('login'))
             <div class="h-14.5 hidden lg:block"></div>

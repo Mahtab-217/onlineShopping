@@ -11,6 +11,8 @@ class ProductController extends Controller
     //
     public function landing(){
         $products =Product::with('productDetail')->get();
+      return view('welcome', ['products'=>$products]); 
+
     }
     public function showForm(){
         return view('Product.add');
