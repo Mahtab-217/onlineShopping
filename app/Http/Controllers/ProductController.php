@@ -9,9 +9,13 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     //
+    public function landing(){
+        $products =Product::with('productDetail')->get();
+    }
     public function showForm(){
         return view('Product.add');
     }
+
     public function create(Request $request){
         $request->validate([
          "name"=>"required|min:4|max:50",
@@ -21,7 +25,7 @@ class ProductController extends Controller
         ]);
         $path=null;
         if($request->hasFile("photo")){
-            $path=$request->file("photo")->store("product_images","public");
+            $path=$request->file("photo")->store("images","public");
         }
         $product=new Product();
         $product->name=$request->name;
@@ -34,5 +38,6 @@ class ProductController extends Controller
         $proDetails->product_id=$product->id;
         $proDetails->img_url = $path;
         $proDetails->save();
+        return redirect("/");
     }
 }
