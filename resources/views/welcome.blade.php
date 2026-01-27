@@ -75,9 +75,9 @@
         @if ($products->count() > 0)
           @foreach ($products as $product)
             @foreach ($product->product_details as $productDtl)
-              <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+              <div class="bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-lg transition">
                 <!-- Reduced image height -->
-                <img class="w-full h-42 object-cover" src="/storage/{{ $productDtl->img_url }}" alt="">
+                <img class="w-full h-20  object-cover" src="/storage/{{ $productDtl->img_url }}" alt="">
                 <div class="p-2">
                   <h2 class="text-sm font-bold text-white">{{ $product->name }}</h2>
                   <div class="flex justify-between text-xs text-gray-400 mt-1">
@@ -86,7 +86,7 @@
                   </div>
                   <p class="text-xs text-gray-300 mt-1">{{ $productDtl->description }}</p>
                 </div>
-                <a href="{{ URL('session') }}" class="block bg-blue-600 text-white text-center py-1 hover:bg-blue-700 transition text-xs">
+                <a href="{{ URL('session') }}" class="block bg-gray-200 text-center py-1 hover:bg-blue-700 transition text-xs">
                   <i class="fa-solid fa-shopping-cart"></i> Buy
                 </a>
               </div>
