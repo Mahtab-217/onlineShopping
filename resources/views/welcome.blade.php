@@ -52,25 +52,29 @@
             <div class=" w-full h-fit max-w-6xl bg-stone-200">
              {{-- <x-hero/> --}}
         <div class="flex flex-col items-center ">
-      <h1 class="text-3xl font-bold">Features Products</h1>
+      <h1 class="text-3xl font-bold text-white">Featured Products</h1>
       <div class="grid w-full grid-cols-3 gap-8 ">
         @if ($products->count()>0)
         
         @foreach ($products as $product)
+        @foreach ($product->product_details as $productDtl )
+            
+        
         <div class="border rounded-md flex flex-col gap-2 bg-white">
-            <img class="rpunded-t-lg w-full h-48" src="{{'/storage/'.$product->productDetail->img_url }}" alt="">
+            <img class="rounded-t-lg w-full h-48" src="/storage/{{$productDtl->img_url }}" alt="">
            <div class="px-1">
-            <h1 class="text-3xl font-bold">{{$products->name}}</h1>
+            <h1 class="text-3xl font-bold">{{$product->name}}</h1>
             <div class=" flex justify-between">
-              <p>{{$products->product_detail->price}} AFN</p>
-              <p>{{$products->product_detail->made_in}} </p>
+              <p>{{$productDtl->price}} AFN</p>
+              <p>{{$productDtl->made_in}} </p>
             </div>
-            <p class="text-sm py-2 text-gray-200 ">{{$products->product_detail->description}}</p>
+            <p class="text-sm py-2 text-gray-200 ">{{$productDtl->description}}</p>
            </div>
         </div>
         @endforeach
+        @endforeach
         @else
-            <h1>No product exists yet</h1>
+            <h1 class="text-white">No product exists yet</h1>
         @endif
       </div>
         </div>
