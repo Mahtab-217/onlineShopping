@@ -53,53 +53,53 @@
                 </nav>
             @endif
         </header>
-            <div class=" w-full h-fit max-w-6xl ">
-             {{-- <x-hero/> --}}
-        
-             <div class="w-full  grid grid-col-3 gap-3">
-             <div class="col-span-2 h-32">
-                <h1 class="text-white ">Users Information</h1>
-                <h1 class="text-white">
-                    @if (Auth::user())
-                        {{Auth::user()->name }}
-                    @endif
-                </h1>
-             </div>
-             <div class="col-span-1 h-32">
-                 <h1 class="text-3xl font-bold text-white">Featured Products</h1>
-      <div class="grid w-full grid-cols-2 gap-8 ">
-        @if ($products->count()>0)
-        
-        @foreach ($products as $product)
-        @foreach ($product->product_details as $productDtl )
-            
-        
-        <div class="border rounded-md flex flex-col gap-2 bg-white">
-            <img class="rounded-t-lg w-full h-42    " src="/storage/{{$productDtl->img_url }}" alt="">
-           <div class="px-1">
-            <h1 class="text-3xl font-bold">{{$product->name}}</h1>
-            <div class=" flex justify-between">
-              <p>{{$productDtl->price}} AFN</p>
-              <p>{{$productDtl->made_in}} </p>
-            </div>
-            <p class="text-sm py-2 text-gray-700 ">{{$productDtl->description}}</p>
-           </div>
-           <a href="{{ URL('session') }}">
-           <i class="fas fa-shopping-cart"></i>
-           </a>
-        </div>
-        @endforeach
-        @endforeach
+         
+         <div class="w-full max-w-6xl mx-auto p-4">
+  <div class="grid grid-cols-3 gap-4">
+    
+    <!-- User Information -->
+    <div class="col-span-1 bg-gray-900 rounded-lg p-3 shadow-md">
+      <h1 class="text-lg font-semibold text-white mb-1">Users Information</h1>
+      <h2 class="text-sm text-gray-300">
+        @if (Auth::user())
+          {{ Auth::user()->name }}
+        @endif
+      </h2>
+    </div>
+
+    <!-- Featured Products -->
+    <div class="col-span-2 bg-gray-900 rounded-lg p-3 shadow-md">
+      <h1 class="text-lg font-semibold text-white mb-3">Featured Products</h1>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        @if ($products->count() > 0)
+          @foreach ($products as $product)
+            @foreach ($product->product_details as $productDtl)
+              <div class="bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+                <!-- Reduced image height -->
+                <img class="w-full h-42 object-cover" src="/storage/{{ $productDtl->img_url }}" alt="">
+                <div class="p-2">
+                  <h2 class="text-sm font-bold text-white">{{ $product->name }}</h2>
+                  <div class="flex justify-between text-xs text-gray-400 mt-1">
+                    <p>{{ $productDtl->price }} AFN</p>
+                    <p>{{ $productDtl->made_in }}</p>
+                  </div>
+                  <p class="text-xs text-gray-300 mt-1">{{ $productDtl->description }}</p>
+                </div>
+                <a href="{{ URL('session') }}" class="block bg-blue-600 text-white text-center py-1 hover:bg-blue-700 transition text-xs">
+                  <i class="fa-solid fa-shopping-cart"></i> Buy
+                </a>
+              </div>
+            @endforeach
+          @endforeach
         @else
-            <h1 class="text-white">No product exists yet</h1>
+          <h2 class="text-gray-300">No product exists yet</h2>
         @endif
       </div>
+    </div>
 
-             </div>
-             </div>
-        </div>
-            </div>
-         
+  </div>
+</div>
 
         @if (Route::has('login'))
             <div class="h-14.5 hidden lg:block"></div>
