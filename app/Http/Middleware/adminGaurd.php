@@ -6,6 +6,8 @@ use Closure;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
+use Illuminate\Support\Facades\Auth as SupportFacadesAuth;
+use Illuminate\Support\Facades\Auth as IlluminateSupportFacadesAuth;
 use Symfony\Component\HttpFoundation\Response;
 
 class adminGaurd
@@ -17,7 +19,7 @@ class adminGaurd
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user=FacadesAuth::user();
+        $user = FacadesAuth::user();
         if($user->user_type !=="admin"){
             return back();
         };

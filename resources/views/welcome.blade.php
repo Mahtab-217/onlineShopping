@@ -54,6 +54,11 @@
             <div class=" w-full h-fit max-w-6xl ">
              {{-- <x-hero/> --}}
         <div class="flex flex-col items-center ">
+          <div  class="w-full grid grid-cols-3 gap-3">
+            <div class="col-span-1">
+            <h1>Users Information</h1>
+            </div>
+            <div class="col-span-2">
       <h1 class="text-3xl font-bold text-white">Featured Products</h1>
       <div class="grid w-full grid-cols-3 gap-8 ">
         @if ($products->count()>0)
@@ -79,6 +84,8 @@
             <h1 class="text-white">No product exists yet</h1>
         @endif
       </div>
+            </div>
+          </div>
         </div>
             </div>
          
