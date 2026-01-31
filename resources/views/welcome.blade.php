@@ -65,7 +65,7 @@
           {{ Auth::user()->name }}
         @endif
       </h2>
-      @foreach ('cart',[] as $item )
+      @foreach (session('cart', []) as $item )
         <p>
           {{ $item['name'] }} -
           {{ $item['price'] }} * {{ $item['price'] }}
@@ -91,15 +91,16 @@
                     <p>{{ $productDtl->made_in }}</p>
                   </div>
                     {{-- form for cart --}}
-                    <form action="{{ URL('/cart/add',[$product->id, $product->proDtl->price]) }}" method="POST">
-                    
+                    <form action="{{ URL('/cart/add',[$product->id]) }}" method="POST">
+                    @csrf
+                    <button>
+                      <i class="fas fa-shopping-cart text-white"></i>
+                    </button>
                     </form>
 
                   <p class="text-xs text-gray-300 mt-1">{{ $productDtl->description }}</p>
                 </div>
-                <a href="{{ URL('session') }}" class="block bg-gray-200 text-center py-1 hover:bg-blue-700 transition text-xs">
-                  <i class="fa-solid fa-shopping-cart"></i> Buy Now
-                </a>
+                
               </div>
             @endforeach
           @endforeach
