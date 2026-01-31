@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+use function Pest\Laravel\session;
+
 class cartController extends Controller
 {
     //
@@ -23,5 +25,9 @@ class cartController extends Controller
     'quantity'=>1
     ];
   }
+  session()->put('cart',$cart);
+  return redirect()->back();
     }
+
 }
+

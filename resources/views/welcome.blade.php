@@ -65,6 +65,12 @@
           {{ Auth::user()->name }}
         @endif
       </h2>
+      @foreach ('cart',[] as $item )
+        <p>
+          {{ $item['name'] }} -
+          {{ $item['price'] }} * {{ $item['price'] }}
+        </p>
+      @endforeach
     </div>
 
     <!-- Featured Products -->
@@ -84,6 +90,11 @@
                     <p>{{ $productDtl->price }} AFN</p>
                     <p>{{ $productDtl->made_in }}</p>
                   </div>
+                    {{-- form for cart --}}
+                    <form action="{{ URL('/cart/add',[$product->id, $product->proDtl->price]) }}" method="POST">
+                    
+                    </form>
+
                   <p class="text-xs text-gray-300 mt-1">{{ $productDtl->description }}</p>
                 </div>
                 <a href="{{ URL('session') }}" class="block bg-gray-200 text-center py-1 hover:bg-blue-700 transition text-xs">
