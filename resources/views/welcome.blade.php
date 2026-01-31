@@ -60,7 +60,7 @@
     <!-- User Information -->
     <div class="col-span-1 bg-gray-900 rounded-lg p-3 shadow-md">
       <h1 class="text-lg font-semibold text-white mb-1">Users Information</h1>
-      <h2 class="text-sm text-gray-300">
+      <h2  class=" font-bold text-lg text-gray-300">
         @if (Auth::user())
           {{ Auth::user()->name }}
         @endif
@@ -87,7 +87,7 @@
                   <p class="text-xs text-gray-300 mt-1">{{ $productDtl->description }}</p>
                 </div>
                 <a href="{{ URL('session') }}" class="block bg-gray-200 text-center py-1 hover:bg-blue-700 transition text-xs">
-                  <i class="fa-solid fa-shopping-cart"></i> Buy
+                  <i class="fa-solid fa-shopping-cart"></i> Buy Now
                 </a>
               </div>
             @endforeach
