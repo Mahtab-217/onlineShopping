@@ -8,7 +8,7 @@
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <div class="w-full bg-gray-200 h-screen p-3 justify-center items-center flex ">
+    <div class="w-full bg-gray-200 h-screen p-3 justify-center items-center flex bg-cover  bg-[url('https://images.unsplash.com/photo-1522383225653-ed111181a951?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ymxvc3NvbXxlbnwwfHwwfHx8MA%3D%3D')]">
         <div class="border rounded-sm p-6 w-8/12 lg-7/12 md-8/12">
             <h1 class="text-center font-bold text-2xl ">Add new product</h1>
                <form action="{{ URL("products/create") }}" method="POST" class="flex p-4 flex-col gap-3 w-full" enctype="multipart/form-data">

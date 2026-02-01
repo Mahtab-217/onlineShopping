@@ -7,9 +7,9 @@
     <title>Document</title>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="w-full max-w-6xl mx-auto mt-2">
+<body class="w-full max-w-6xl mx-auto mt-2 bg-cover bg-[url('https://media.istockphoto.com/id/852875630/photo/young-woman-florist-occupation-working-with-flowers.webp?a=1&b=1&s=612x612&w=0&k=20&c=OZXonOkBjVp8N432EGvXMUoR9ANOFy2lELs_uj0YYGY=')]">
    
-    <div class="flex h-screen w-full justify-center items-center ">
+    <div class="flex h-screen w-full justify-center items-center   ">
          @if ($errors->count()>0)
         @foreach ($errors as $error )
        
