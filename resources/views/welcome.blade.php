@@ -35,13 +35,18 @@
                         >
                             Dashboard
                         </a>
-                        @if (Auth::user()->user_type=="admin")
-                           <div>
-                            <a href="">Add Product</a>
-                            <a href="">Add Customer</a>
+                        @if (Auth::user()->user_type==="admin")
+                           <div class="flex justify-center gap-5 text-white ">
+                            <a class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal" href="/products/add">Add Product</a>
+                            <a class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal" href="/customer/create">Add Customer</a>
+                            <a class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal" href="/customer/">Customers</a>
+                           </div>
+                           @else 
+                           <div class="flex justify-center gap-5 text-white">
+                            <a class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal" href="/">All Products</a>
                            </div>
                         @endif
-                       
+                           
                     </div>
 
                     @else
