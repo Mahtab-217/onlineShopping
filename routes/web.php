@@ -29,6 +29,6 @@ Route::prefix("/products")->controller(ProductController::class)->middleware(adm
     Route::get("/add","showForm");
     Route::post('create',"create");
 });
-Route::post('cart/add/{id}/{price}', [cartController::class],'add');
+Route::post('cart/add/{id}/{price}', [cartController::class,'add']);
 Route::get('/',[ProductController::class, 'landing']);
 require __DIR__.'/auth.php';

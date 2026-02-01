@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-use function Pest\Laravel\session;
+// use function Pest\Laravel\session;
 
 class cartController extends Controller
 {
     //
-    public function add(Request $id, $price){
+    public function add(Request $request, $id, $price){
   $product= Product::findOrFail($id);
   $cart = session()->get('cart', []);
   if(isset($cart[$id])){

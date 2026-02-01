@@ -28,12 +28,22 @@
             @if (Route::has('login'))
                 <nav class="flex items-center justify-end gap-4">
                     @auth
+                    <div class="flex w-full gap-2 justify-between px-5">
                         <a
                             href="{{ url('/dashboard') }}"
                             class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
                         >
                             Dashboard
                         </a>
+                        @if (Auth::user()->user_type=="admin")
+                           <div>
+                            <a href="">Add Product</a>
+                            <a href="">Add Customer</a>
+                           </div>
+                        @endif
+                       
+                    </div>
+
                     @else
                         <a
                             href="{{ route('login') }}"
@@ -66,9 +76,9 @@
         @endif
       </h2>
       @foreach (session('cart', []) as $item )
-        <p>
+        <p class="text-white">
           {{ $item['name'] }} -
-          {{ $item['price'] }} * {{ $item['price'] }}
+          {{ $item['quantity'] }} * {{ $item['price'] }}
         </p>
       @endforeach
     </div>
@@ -91,7 +101,7 @@
                     <p>{{ $productDtl->made_in }}</p>
                   </div>
                     {{-- form for cart --}}
-                    <form action="{{ URL('/cart/add',[$product->id]) }}" method="POST">
+                    <form  action="{{ URL('/cart/add',[$product->id, $productDtl->price]) }}" method="POST">
                     @csrf
                     <button>
                       <i class="fas fa-shopping-cart text-white"></i>
