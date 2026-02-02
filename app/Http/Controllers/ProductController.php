@@ -40,6 +40,7 @@ class ProductController extends Controller
         $proDetails->product_id=$product->id;
         $proDetails->img_url = $path;
         $proDetails->save();
+        event(new UserAwarenessEvent());
         return redirect("/");
     }
 }
