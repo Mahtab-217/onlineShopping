@@ -31,4 +31,5 @@ Route::prefix("/products")->controller(ProductController::class)->middleware(adm
 });
 Route::post('cart/add/{id}/{price}', [cartController::class,'add']);
 Route::get('/',[ProductController::class, 'landing']);
+Broadcast::routes();
 require __DIR__.'/auth.php';
